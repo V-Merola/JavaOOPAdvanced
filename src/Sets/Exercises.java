@@ -1,6 +1,8 @@
+package Sets;
+
 import java.util.*;
 
-public class Exercises1 {
+public class Exercises {
 
     public static void main(String[] args) {
         exercise1();
@@ -21,9 +23,13 @@ public class Exercises1 {
         Set<Integer> ourSet = new HashSet<>();
 
         // Add some numbers using the add method
-        // Your code
+        ourSet.add(1);
+        ourSet.add(1);
+        ourSet.add(5);
+        ourSet.add(2);
+        ourSet.add(1);
 
-        if (ourSet.containsAll(Set.of(1, 1, 5, 2, 1))) {
+        if (ourSet.containsAll(Arrays.asList(1, 1, 5, 2, 1))) {
             System.out.println("1a. Set contains all numbers");
         } else {
             System.out.println("1a. Set does not contain all numbers");
@@ -32,7 +38,8 @@ public class Exercises1 {
         System.out.println(ourSet);
 
         // Remove the element '1'
-        // Your code
+
+        ourSet.remove(1);
 
         System.out.println(ourSet);
 
@@ -82,6 +89,12 @@ public class Exercises1 {
 
         for (Integer number : numbers) {
             // Your code
+            if (number >= max + 1){
+                max = number;
+            }
+            if (number <= min - 1){
+                min = number;
+            }
         }
 
         if (max != 10 || min != 1) {
@@ -95,6 +108,11 @@ public class Exercises1 {
         Set<Integer> itemsContainedInBothSets = new HashSet<>();
 
         // Your code
+        for (int number : setA){
+            if (setB.contains(number)){
+                itemsContainedInBothSets.add(number);
+            }
+        }
 
         if (!itemsContainedInBothSets.equals(Set.of(5, 6, 7, 8, 9, 10))) {
             System.out.println("3b. Incorrect number of items in itemsContainedInBothSets");
@@ -114,6 +132,12 @@ public class Exercises1 {
         //     you can use `break;` to exit the loop once you've found it!
         int min = Integer.MAX_VALUE;
         // Your code
+        for (int number : orderedNumbers) {
+            if (number < min) {
+                min = number;
+                break;
+            }
+        }
 
         if (min != 1) {
             System.out.println("4a. Incorrect min value");
